@@ -53,7 +53,88 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+/* tablero */
+.game{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+/* turnos */
+.turn {
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+  width: fit-content;
+  position: relative;
+  border-radius: 10px;
+}
+/* casilla */
 
+.square{
+  width: 100px;
+  height: 100px;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 48px;
+}
+
+.winner {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.winner .square {
+  width: 70px;
+  height: 70px;
+  pointer-events: none;
+  border-color: transparent;
+}
+
+.winner .text {
+  background: #111;
+  height: 300px;
+  width: 320px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.winner .text .win {
+  margin: 2 auto;
+  width: fit-content;
+  border-radius: 10px;
+  border:3px solid #fff;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  gap: 15px;
+}
+
+
+
+.turnos{
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+}
+
+.square.is-selected {
+  color: #fff;
+  background: #09f;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
